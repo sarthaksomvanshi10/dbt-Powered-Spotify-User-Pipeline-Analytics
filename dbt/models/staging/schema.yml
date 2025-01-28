@@ -1,0 +1,39 @@
+version: 2
+
+# db sources
+sources:
+  - name: spotify
+    schema: dbt_spotify
+    tables:
+      - name: current_user_playlists
+      - name: current_user_recently_played
+      - name: current_user_top_artists
+      - name: current_user_top_tracks
+      - name: playlist_items
+
+models:
+  - name: stg_songplays
+    columns:
+      - name: track_id
+        tests:
+          - not_null
+      - name: artist_id
+        tests:
+          - not_null
+  
+  - name: stg_top_artists
+    columns:
+      - name: artist_id
+        tests:
+          - not_null
+          - unique
+  
+  - name: stg_top_tracks
+    columns:
+      - name: track_id
+        tests:
+          - not_null
+          - unique
+      - name: artist_id
+        tests:
+          - not_null
