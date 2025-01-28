@@ -1,4 +1,6 @@
-# Spotify User Analytics
+# dbt Powered Spotify User Pipeline Analytics
+
+
 
 ## Introduction
 In this project, we will be analyzing our listening history, top tracks & artists, and genres from Spotify. Here are the tools that we will be using:
